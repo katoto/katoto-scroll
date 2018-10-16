@@ -1,9 +1,10 @@
 {
   "name": "katoto-scroll",
   "description": "第一个npm滚动尝试",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "author": "katoto",
   "license": "MIT",
+  "main": "src/main.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"

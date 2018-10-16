@@ -101,7 +101,7 @@
         }
       },
       options () {
-        return copyObj({}, this.defaultOption, this.classOption)
+        return this.copyObj({}, this.defaultOption, this.classOption)
       },
       moveSwitch () {
         return this.data.length < this.options.limitMoveNum
@@ -147,6 +147,7 @@
             return true
         },
         copyObj(){
+            var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
             // 深浅合并拷贝
             if( !Array.isArray ){
                 Array.isArray = function(arg){
@@ -188,7 +189,7 @@
                             } else {
                                 clone = src && (typeof src === 'undefined' ? 'undefined' : _typeof(src)) === 'object' ? src : {};
                             }
-                            target[name] = copyObj(deep, clone, copy);
+                            target[name] = this.copyObj(deep, clone, copy);
                         } else if (copy !== undefined) {
                             target[name] = copy;
                         }
@@ -278,7 +279,6 @@
       enter () {
         if (this.hoverStop) return
         this.isHover = true //关闭_move
-        // 防止蛋疼的人频频hover进出单步滚动 导致定时器乱掉
         if (this.singleWaitTime) clearTimeout(this.singleWaitTime)
         this._cancle()
       },
@@ -393,7 +393,7 @@
       data (newData, oldData) {
         this._dataWarm(newData)
         //监听data是否有变更
-        if (!arrayEqual(newData, oldData)) {
+        if (!this.arrayEqual(newData, oldData)) {
           this._cancle()
           this._initMove()
         }

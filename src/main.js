@@ -7,5 +7,6 @@ console.log(vueMyClass)
 if(typeof window !== 'undefined' && window.Vue){
     Vue.component(vueMyClass.name, vueMyClass)
 }
+console.log('11111111')
 
 export default vueMyClass
