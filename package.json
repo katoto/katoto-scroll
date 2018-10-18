@@ -1,7 +1,7 @@
 {
   "name": "katoto-scroll",
   "description": "第一个npm滚动尝试",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "katoto",
   "license": "MIT",
   "main": "src/main.js",
